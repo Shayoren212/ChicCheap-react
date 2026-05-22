@@ -1,0 +1,21 @@
+.profile-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.profile-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.profile-form input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #e4e2dd;
+  border-radius: 4px;
+  background: #ffffff;
+  padding: 0 12px;
+}
