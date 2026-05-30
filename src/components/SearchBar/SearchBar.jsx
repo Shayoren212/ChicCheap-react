@@ -1,31 +1,27 @@
-import { Camera, SlidersHorizontal, Search, UserRound } from 'lucide-react';
+import { Camera, SlidersHorizontal, Search } from 'lucide-react';
 
-export default function SearchBar({ onFilter }) {
+export default function SearchBar({ onFilter, onSearch, onImageUpload }) {
   return (
     <section className="stitch-hero">
-      <div className="stitch-header">
-        <h1>ChicCheap</h1>
-        <button>
-          <UserRound size={18} />
-        </button>
-      </div>
-
-      <h2>What are you looking for?</h2>
+      <h2>מה את מחפשת?</h2>
 
       <div className="stitch-search-box">
         <Search size={16} />
-        <input placeholder="Search by Text (e.g. vintage coat)" />
+        <input
+          placeholder="תארי את הפריט (למשל: מעיל וינטג׳ בז׳)"
+          onChange={(e) => onSearch && onSearch(e.target.value)}
+        />
       </div>
 
       <div className="stitch-action-row">
-        <button>
+        <button onClick={onImageUpload}>
           <Camera size={16} />
-          Visual Search
+          חיפוש לפי תמונה
         </button>
 
         <button onClick={onFilter}>
           <SlidersHorizontal size={16} />
-          Advanced Filters
+          סינון מתקדם
         </button>
       </div>
     </section>

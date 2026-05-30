@@ -1,53 +1,55 @@
-// Navbar.jsx
-import { Bell, Home, Search, SlidersHorizontal, UserRound, LogOut } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom'
+import './Navbar.css'
 
-export default function Navbar({ currentPage, onNavigate, onLogout }) {
-  const links = [
-    { page: 'landing', label: 'Home', icon: Home },
-    { page: 'about', label: 'About', icon: Search },
-    { page: 'notifications', label: 'Alerts', icon: Bell },
-    { page: 'profile', label: 'Profile', icon: UserRound }
-  ];
+function Navbar() {
+  const location = useLocation()
+  const isActive = (path) => location.pathname === path
 
   return (
-    <>
-      <header className="top-navbar">
-        <button
-          className="brand"
-          onClick={() => onNavigate('landing')}
-          aria-label="ChicCheap home"
-        >
+    <header className="navbar">
+      <div className="navbar__inner">
+        <Link to="/home" className="navbar__logo">
           ChicCheap
-        </button>
+        </Link>
 
-        {/* הצגת כפתורי הניווט הנוספים ב-Header רק כאשר לא נמצאים בעמוד התראות */}
-        {currentPage !== 'notifications' && (
-          <>
-            <button className="filter-pill" onClick={() => onNavigate('landing')}>
-              <SlidersHorizontal size={16} />
-              Smart fashion finder
-            </button>
-
-            <button className="logout-button" onClick={onLogout}>
-              <LogOut size={16} />
-              Logout
-            </button>
-          </>
-        )}
-      </header>
-
-      <nav className="bottom-navbar" aria-label="Main navigation">
-        {links.map(({ page, label, icon: Icon }) => (
-          <button
-            key={page}
-            className={currentPage === page ? 'active' : ''}
-            onClick={() => onNavigate(page)}
+        <nav className="navbar__icons" aria-label="ניווט ראשי">
+          <Link
+            to="/home"
+            className={`navbar__icon-btn ${isActive('/home') ? 'navbar__icon-btn--active' : ''}`}
+            aria-label="דף הבית"
           >
-            <Icon size={20} />
-            <span>{label}</span>
-          </button>
-        ))}
-      </nav>
-    </>
-  );
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 12L12 3l9 9" />
+              <path d="M9 21V12h6v9" />
+              <path d="M3 12v9h18v-9" />
+            </svg>
+          </Link>
+
+          <Link
+            to="/notifications"
+            className={`navbar__icon-btn ${isActive('/notifications') ? 'navbar__icon-btn--active' : ''}`}
+            aria-label="התראות"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 01-3.46 0" />
+            </svg>
+          </Link>
+
+          <Link
+            to="/profile"
+            className={`navbar__icon-btn ${isActive('/profile') ? 'navbar__icon-btn--active' : ''}`}
+            aria-label="פרופיל"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </Link>
+        </nav>
+      </div>
+    </header>
+  )
 }
+
+export default Navbar

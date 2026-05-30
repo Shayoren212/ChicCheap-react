@@ -1,4 +1,3 @@
-// AuthCard.jsx
 import './AuthCard.css';
 import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton.jsx';
 
@@ -50,7 +49,7 @@ export default function AuthCard({
             {isRegister ? 'הרשמה' : 'כניסה'}
           </button>
 
-          {/* כפתור יחיד וממוקם בצורה נכונה במרכז הטופס */}
+          {/* כפתור יחיד ומרכזי להתחברות עם גוגל */}
           <GoogleLoginButton
             onClick={() =>
               alert('Google Login יחובר בהמשך עם מערכת אימות אמיתית')
@@ -73,6 +72,7 @@ export default function AuthCard({
       <div className="auth-right">
         <div className="auth-overlay">
           <h2>ChicCheap</h2>
+
           <p>
             הפלטפורמה לקהילה של אוהבי אופנה שמעריכים איכות,
             קיימות וסטייל ללא פשרות.
