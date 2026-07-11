@@ -459,19 +459,3 @@ function ProductPage() {
 }
 
 export default ProductPage
-ct-similar__title">{s.title}</p>
-                  <p className="product-similar__price">₪{s.price}</p>
-                </button>
-              ))}
-            </div>
-          </section>
-        )}
-
-      </main>
-
-      <Footer />
-    </div>
-  )
-}
-
-export default ProductPage
