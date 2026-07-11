@@ -1,0 +1,130 @@
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background: #f9f7f2;
+}
+
+.auth-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px;
+  background: #f9f7f2;
+}
+
+.auth-content {
+  width: 100%;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth-logo {
+  font-family: 'EB Garamond', serif;
+  color: #162839;
+  font-size: 58px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.auth-heading {
+  font-size: 36px;
+  line-height: 1.4;
+  color: #162839;
+  text-align: right;
+}
+
+.auth-description {
+  color: #7f8c8d;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  text-align: right;
+}
+
+.auth-input {
+  height: 58px;
+  border: 1px solid #d9d9d9;
+  background: white;
+  border-radius: 4px;
+  padding: 0 18px;
+  font-size: 16px;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #7b5455;
+}
+
+.auth-submit {
+  height: 58px;
+  border: none;
+  background: #7b5455;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-submit:hover {
+  opacity: 0.92;
+}
+
+.auth-switch {
+  border: none;
+  background: transparent;
+  color: #162839;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.auth-right {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1400&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.auth-overlay {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  color: white;
+  max-width: 420px;
+}
+
+.auth-overlay h2 {
+  font-size: 56px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.auth-overlay p {
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+@media (max-width: 900px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-right {
+    display: none;
+  }
+
+  .auth-left {
+    padding: 32px 24px;
+  }
+
+  .auth-logo {
+    font-size: 42px;
+  }
+
+  .auth-heading {
+    font-size: 28px;
+  }
+}

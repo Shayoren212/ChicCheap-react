@@ -1,0 +1,23 @@
+.footer {
+  padding: var(--space-md) var(--container-margin);
+  border-top: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface-container-low);
+  text-align: center;
+}
+
+.footer__text {
+  font-size: var(--text-label-md);
+  color: var(--warm-gray);
+  letter-spacing: 0.04em;
+}
+
+.footer__link {
+  color: var(--warm-gray);
+  transition: color var(--transition);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer__link:hover {
+  color: var(--navy);
+}
