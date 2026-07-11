@@ -4,7 +4,7 @@
 
 **אגרגטור אופנה חכם — מצאי את הלוק המושלם במחיר הכי טוב ברשת.**
 
-🔗 **[האתר החי](https://chiccheap-react.vercel.app)**  
+🔗 **[האתר החי](https://chic-cheap-react.vercel.app)**  
 🔗 **[GitHub Repository](https://github.com/Shayoren212/ChicCheap-react)**
 
 ---
